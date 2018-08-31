@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="https://fonts.googleapis.com/css?family=Spectral" rel="stylesheet">
+<style>
+    body{
+        text-align: center;
+        margin: 50px;
+        font-family: 'Spectral', serif;
+    }
+    textarea{
+        display: block;
+        margin: 0 auto;
+        border: none;
+        width: 400px;
+        height: 180px;
+        resize: none;
+        font-size: 15px;
+        font-family: 'Spectral', serif;
+        background: lightgray;
+        border-radius: 3px;
+        padding: 5px;
+        box-sizing: border-box;
+    }
+    input:focus,
+    button:focus,
+    textarea:focus{
+        outline: none;
+    }
+    .buttons{
+        display: block;
+        margin: 0 auto;
+    }
+    input,
+    button{
+        background: rgb(201, 201, 201);
+        padding: 10px;
+        border-radius: 5px;
+        margin-right: 10px;
+    }
+    button a{
+        text-decoration: none;
+        color: #000;
+    }
+.tooltip {
+    position: relative;
+    display: inline-block;
+}
+
+.tooltip .tooltiptext {
+    visibility: hidden;
+    width: 140px;
+    background-color: #555;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px;
+    position: absolute;
+    z-index: 1;
+    bottom: 150%;
+    left: 50%;
+    margin-left: -75px;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.tooltip .tooltiptext::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #555 transparent transparent transparent;
+}
+
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+    opacity: 1;
+}
+@media only screen and (max-width: 600px) {
+    textarea{
+        display: block;
+        margin: 0 auto;
+        width: 96%;
+        height: 210px;
+        overflow: hidden;
+    }
+    h2{
+        margin: -30px 0 -10px 0;
+        text-align: center;
+    }
+    input{
+        margin-bottom: 10px;
+    }
+    button{
+        padding: 12px;
+    }
+}
+
+</style>
+</head>
+<body>
+
+<h2>Please be so kind and repost this message on your WhatsApp status</h2>
+<br>
+<textarea readonly type="text"  id="myInput">Hey,
+
+If you know of an accessible apartment in the monsey or spring valley area, please hit up my buddy. 
+Thanks 
+
+https://wa.me/18452743652 </textarea>
+
+<br>
+<br>
+<div class="buttons">
+
+<input type="button" value="Send on WhatsApp" onclick="window.location.href='https://wa.me/?text=Hey%2C%20If%20you%20know%20of%20an%20accessible%20apartment%20in%20the%20monsey%20or%20spring%20valley%20area%2C%20please%20hit%20up%20my%20buddy.%20Thanks%20https%3A%2F%2Fwa.me%2F18452743652'">
+
+<div class="tooltip">
+
+<button type="button" onclick="myFunction()" onmouseout="outFunc()">Copy to Clipboard
+  <span class="tooltiptext" id="myTooltip">Copy to clipboard</span>
+  </button>
+
+</div>
+</div>
+
+
+<script>
+function myFunction() {
+  var copyText = document.getElementById("myInput");
+  copyText.select();
+  document.execCommand("copy");
+  
+  var tooltip = document.getElementById("myTooltip");
+  tooltip.innerHTML = "Copied!";
+}
+
+function outFunc() {
+  var tooltip = document.getElementById("myTooltip");
+  tooltip.innerHTML = "Copy to clipboard";
+}
+</script>
+</body>
+</html>
